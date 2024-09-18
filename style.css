@@ -6,6 +6,7 @@
 
 :root {
     --bg-color: #b3dfea;
+    --btn-color: #70c573;
 }
 
 body {
@@ -47,7 +48,7 @@ main {
             border: none;
             font-family: gagalin;
             font-size: 20px;
-            background-color: #70c573;
+            background: var(--btn-color);
         }
     }
 }
