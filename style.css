@@ -41,6 +41,10 @@ main {
         display: flex;
         flex-direction: column;
         gap: 50px;
+
+        & button {
+            height: 30px;
+        }
     }
 }
 
