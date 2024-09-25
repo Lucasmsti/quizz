@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100svh;
+    background-image: linear-gradient(to bottom, rgba(255, 230, 3, 0.5), rgba(0, 232, 255, 0.8));
+    font-family: gagalin;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+    & .cipo, .cipo-2 {
+        height: 150px;
+    }
+
+    & .cipo {
+        width: 230px;
+    }
+}
