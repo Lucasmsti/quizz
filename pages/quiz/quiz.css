@@ -74,6 +74,13 @@ main {
                 background-color: rgba(0, 0, 0, 0.2);
                 font-size: 18px;
                 border-radius: 12px;
+                cursor: pointer;
+
+                &:hover {
+                    & span {
+                        background-color: rgba(0, 0, 0, 0.4);  
+                    }
+                }
 
                 &:has(input:checked) {
                     outline: 3px solid #000000;
@@ -132,12 +139,71 @@ main {
             font-family: gagalin;
             width: 100%;
             font-size: 18px;
+            transition: background 0.4s;
 
+            &:hover {
+                background-color: #a4ffa7;
+                cursor: pointer;
+            }
         }
 
     }
 }
 
 @media (min-width: 1100px) {
+    main {
+        max-width: 1160px;
+        margin-inline: auto;
+        display: flex;
+        gap: 130px;
 
+        & section {
+            width: 100%;
+        }
+
+        & .pergunta {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            & p {
+                font-size: 20px;
+                line-height: 30px;
+                margin-bottom: 27px;
+            }
+
+            & h2 {
+                font-size: 36px;
+                line-height: 42px;
+            }
+        }
+
+        & .alternativas {
+
+            & form {
+                gap: 24px;
+                margin-bottom: 24px;
+
+                & label {
+                    font-size: 22px;
+                    padding: 18px 20px;
+                    border-radius: 24px;
+
+                    & div {
+                        gap: 32px;
+
+                        & span {
+                            width: 56px;
+                            height: 56px;
+                            font-size: 28px;
+                        }
+                    }
+                }
+            }
+
+            & button {
+                font-size: 22px;
+            }
+        }
+    }
 }
