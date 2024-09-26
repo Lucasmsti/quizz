@@ -83,6 +83,23 @@ main {
                     }
                 }
 
+                &#certo {
+                    outline: 3px solid var(--correto);
+
+                    & span {
+                        background: var(--correto);
+                        color: #fff;
+                    }
+                }
+
+                &#errado {
+                    outline: 3px solid var(--incorreto);
+
+                    & span {
+                        background: var(--incorreto);
+                    }
+                }
+
                 & input {
                     display: none;
                 }
