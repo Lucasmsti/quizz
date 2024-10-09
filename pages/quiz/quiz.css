@@ -30,124 +30,118 @@ header {
 
 main {
     padding: 32px 24px;
+}
 
-    & .pergunta {
-        margin-bottom: 25px;
+.pergunta {
+    margin-bottom: 25px;
+}
 
-        & p {
-            font-size: 15px;
-            margin-bottom: 12px;
-            color: rgba(0, 0, 0, 0.5);
-        }
+.pergunta p {
+    font-size: 15px;
+    margin-bottom: 12px;
+    color: rgba(0, 0, 0, 0.5);
+}
 
-        & h2 {
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
+.pergunta h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
 
-        & .barra-progresso {
-            background-color: rgba(0, 0, 0, 0.2);
-            height: 15px;
-            padding: 4px;
-            border-radius: 999px;
+.pergunta .barra-progresso {
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 15px;
+    padding: 4px;
+    border-radius: 999px;
+}
 
-            & div {
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.5);
-                border-radius: 999px;
-            }
-        }
-    }
+.pergunta .barra-progresso div {
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 999px;
+}
 
-    & .alternativas {
-        & form {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 12px;
-            gap: 12px;
+.alternativas form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+    gap: 12px;
+}
 
+.alternativas form label {
+    display: block;
+    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+}
 
-            & label {
-                display: block;
-                padding: 12px;
-                background-color: rgba(0, 0, 0, 0.2);
-                font-size: 18px;
-                border-radius: 12px;
-                cursor: pointer;
+.alternativas form label:hover span {
+    background-color: rgba(0, 0, 0, 0.4);  
+}
 
-                &:hover {
-                    & span {
-                        background-color: rgba(0, 0, 0, 0.4);  
-                    }
-                }
+.alternativas form label:has(input:checked) {
+    outline: 3px solid #000000;
 
-                &:has(input:checked) {
-                    outline: 3px solid #000000;
-
-                    & span {
-                        background-color: rgba(0, 0, 0, 0.5);
-                    }
-                }
-
-                &#certo {
-                    outline: 3px solid var(--correto);
-
-                    & span {
-                        background: var(--correto);
-                        color: #fff;
-                    }
-                }
-
-                &#errado {
-                    outline: 3px solid var(--incorreto);
-
-                    & span {
-                        background: var(--incorreto);
-                    }
-                }
-
-                & input {
-                    display: none;
-                }
-
-                & div {
-                    display: flex;
-                    align-items: center;
-                    gap: 16px;
-
-                    & span {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        flex-shrink: 0;
-                        border-radius: 5px;
-                        width: 40px;
-                        height: 40px;
-                        background-color: rgba(0, 0, 0, 0.2);
-
-                    }
-                }
-            }
-        }
-
-        & button {
-            padding: 16px;
-            border-radius: 12px;
-            border: none;
-            background-color: #9ad69c;
-            font-family: gagalin;
-            width: 100%;
-            font-size: 18px;
-            transition: background 0.4s;
-
-            &:hover {
-                background-color: #a4ffa7;
-                cursor: pointer;
-            }
-        }
-
+    & span {
+        background-color: rgba(0, 0, 0, 0.5);
     }
 }
+
+.alternativas form label#certo {
+    outline: 3px solid var(--correto);
+
+    & span {
+        background: var(--correto);
+        color: #fff;
+    }
+}
+
+.alternativas form label#errado {
+    outline: 3px solid var(--incorreto);
+
+    & span {
+        background: var(--incorreto);
+    }
+}
+
+.alternativas form label input {
+    display: none;
+}
+
+.alternativas form label div {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.alternativas form label div span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.alternativas button {
+    padding: 16px;
+    border-radius: 12px;
+    border: none;
+    background-color: #9ad69c;
+    font-family: gagalin;
+    width: 100%;
+    font-size: 18px;
+    transition: background 0.4s;
+}
+
+.alternativas button:hover {
+    background-color: #a4ffa7;
+    cursor: pointer;
+}
+
 
 @media (min-width: 1100px) {
     main {
@@ -155,54 +149,51 @@ main {
         margin-inline: auto;
         display: flex;
         gap: 130px;
+    }
 
-        & section {
-            width: 100%;
-        }
+    main section {
+        width: 100%;
+    }
 
-        & .pergunta {
-            display: flex;
-            flex-direction: column;
-            gap: 70px;
+    main .pergunta {
+        display: flex;
+        flex-direction: column;
+        gap: 70px;
+    }
 
-            & p {
-                font-size: 20px;
-                line-height: 30px;
-                margin-bottom: 27px;
-            }
+    main .pergunta p {
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 27px;
+    }
 
-            & h2 {
-                font-size: 36px;
-                line-height: 42px;
-            }
-        }
+    main .pergunta h2 {
+        font-size: 36px;
+        line-height: 42px;
+    }
 
-        & .alternativas {
+    main .alternativas form {
+        gap: 24px;
+        margin-bottom: 24px;
+    }
 
-            & form {
-                gap: 24px;
-                margin-bottom: 24px;
+    main .alternativas form label {
+        font-size: 22px;
+        padding: 18px 20px;
+        border-radius: 24px;
+    }
 
-                & label {
-                    font-size: 22px;
-                    padding: 18px 20px;
-                    border-radius: 24px;
+    main .alternativas form label div {
+        gap: 32px;
+    }
 
-                    & div {
-                        gap: 32px;
+    main .alternativas form label div span {
+        width: 56px;
+        height: 56px;
+        font-size: 28px;
+    }
 
-                        & span {
-                            width: 56px;
-                            height: 56px;
-                            font-size: 28px;
-                        }
-                    }
-                }
-            }
-
-            & button {
-                font-size: 22px;
-            }
-        }
+    main .alternativas button {
+        font-size: 22px;
     }
 }

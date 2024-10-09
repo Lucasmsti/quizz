@@ -29,74 +29,74 @@ header {
 
 main {
     padding: 32px 24px;
+}
 
-    & .boas_vindas {
-        margin-bottom: 40px;
-    }
+main .boas_vindas {
+    margin-bottom: 40px;
+}
 
-    & h1 {
-        margin-bottom: 10px;
+main h1 {
+    margin-bottom: 10px;
+}
 
-    }
+main .elements {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
 
-    & .elements {
-        display: flex;
-        flex-direction: column;
-        gap: 60px;
-        & button {
-            height: 50px;
-            border-radius: 30px;
-            border: none;
-            font-family: gagalin;
-            font-size: 20px;
-            background: var(--btn-color);
-            transition: transform 0.2 ease, background-color 0.2 ease;
+main .elements button {
+    height: 50px;
+    border-radius: 30px;
+    border: none;
+    font-family: gagalin;
+    font-size: 20px;
+    background: var(--btn-color);
+    transition: transform 0.2 ease, background-color 0.2 ease;
+}
 
-            &:active {
-                transform: scale(1.05);
-            }
-        }
-    }
+main .elements button:active {
+    transform: scale(1.05);
 }
 
 @media(min-width: 1100px) {
-
     main {
         display: flex;
         justify-content: space-around;
+    }
 
-        & .boas_vindas {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 40%;
-        }
+    main .boas_vindas {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 40%;
+    }
 
-        & .elements {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 40%;
+    main .elements {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 40%;
+    }
 
-            & img {
-                height: 400px;
-                width: 400px;
-                transition: transform 0.3s ease;
+    main .elements img {
+        height: 400px;
+        width: 400px;
+        transition: transform 0.3s ease;
+    }
 
-                &:hover {
-                    transform: scale(1.1);
-                }
-            }
+    main .elements img:hover {
+        transform: scale(1.1);
+    }
 
-            & button {
-                width: 400px;
-                transition: transform 0.3s ease;
+    main .elements button {
+        width: 400px;
+        transition: transform 0.3s ease;
+    }
 
-                &:hover {
-                    transform: scale(1.1);
-                }
-            }
-        }
+    main .elements button:hover {
+        transform: scale(1.1);
     }
 }
+
 

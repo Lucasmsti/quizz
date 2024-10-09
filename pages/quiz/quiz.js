@@ -75,6 +75,16 @@ function guardar_resposta(evento) {
     resposta = evento.target.value;
     id_input_resposta = evento.target.id;
 
+    const btn_enviar = document.querySelector(".alternativas button");
+    btn_enviar.addEventListener("click", validar_reposta);
+
+};
+
+function validar_reposta() {
+    if (resposta === quiz.perguntas[pergunta-1].resposta_correta) {
+        document.querySelector(`label[for='${id_input_resposta}']`).setAttribute("id", "certo");
+        pontos = pontos + 1;
+    }
 };
 
 async function iniciar() {
