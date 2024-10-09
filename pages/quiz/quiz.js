@@ -1,6 +1,8 @@
 let quiz = {};
 let pontos = 0;
 let pergunta = 1;
+let resposta = "";
+let id_input_resposta = "";
 
 async function buscar_perguntas () {
     const url_dados = "../../data.json";
@@ -27,7 +29,7 @@ function montar_pergunta() {
         <section class="alternativas">
             <form action="">
                 <label for="alternativa-a">
-                    <input type="radio" id="alternativa-a" name="alternativa" />
+                    <input type="radio" id="alternativa-a" name="alternativa" value="${quiz.perguntas[pergunta-1].alternativas[0]}"/>
                 <div>
                     <span>A</span>
                     ${quiz.perguntas[pergunta-1].alternativas[0]}
@@ -35,28 +37,28 @@ function montar_pergunta() {
             </label>
 
             <label for="alternativa-b">
-                <input type="radio" id="alternativa-b" name="alternativa" />
+                <input type="radio" id="alternativa-b" name="alternativa" value="${quiz.perguntas[pergunta-1].alternativas[1]}"/>
                 <div>
                 <span>B</span>
                 ${quiz.perguntas[pergunta-1].alternativas[1]}
                 </div>
             </label>
             <label for="alternativa-c">
-                <input type="radio" id="alternativa-c" name="alternativa" />
+                <input type="radio" id="alternativa-c" name="alternativa" value="${quiz.perguntas[pergunta-1].alternativas[2]}"/>
                 <div>
                 <span>C</span>
                 ${quiz.perguntas[pergunta-1].alternativas[2]}
                 </div>
             </label>
             <label for="alternativa-d">
-                <input type="radio" id="alternativa-d" name="alternativa" />
+                <input type="radio" id="alternativa-d" name="alternativa" value="${quiz.perguntas[pergunta-1].alternativas[3]}"/>
                 <div>
                 <span>D</span>
                 ${quiz.perguntas[pergunta-1].alternativas[3]}
                 </div>
             </label>
             <label for="alternativa-e">
-                <input type="radio" id="alternativa-e" name="alternativa" />
+                <input type="radio" id="alternativa-e" name="alternativa" value="${quiz.perguntas[pergunta-1].alternativas[4]}"/>
                 <div>
                 <span>E</span>
                 ${quiz.perguntas[pergunta-1].alternativas[4]}
@@ -69,9 +71,20 @@ function montar_pergunta() {
       ` 
 };
 
+function guardar_resposta(evento) {
+    resposta = evento.target.value;
+    id_input_resposta = evento.target.id;
+
+};
+
 async function iniciar() {
     await buscar_perguntas();
     montar_pergunta();
+
+    const input_resposta = document.querySelectorAll(".alternativas input");
+    input_resposta.forEach(input => {
+        input.addEventListener("click", guardar_resposta);
+    });
 };
 
 iniciar();
