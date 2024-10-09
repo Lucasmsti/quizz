@@ -3,6 +3,7 @@ let pontos = 0;
 let pergunta = 1;
 let resposta = "";
 let id_input_resposta = "";
+let id_resposta_correta = "";
 
 async function buscar_perguntas () {
     const url_dados = "../../data.json";
@@ -66,7 +67,7 @@ function montar_pergunta() {
             </label>
             </form>
 
-            <button>Enviar</button>
+            <button>Responder</button>
         </section>
       ` 
 };
@@ -81,20 +82,57 @@ function guardar_resposta(evento) {
 };
 
 function validar_reposta() {
-    if (resposta === quiz.perguntas[pergunta-1].resposta_correta) {
-        document.querySelector(`label[for='${id_input_resposta}']`).setAttribute("id", "certo");
-        pontos = pontos + 1;
+    const btn_enviar = document.querySelector(".alternativas button");
+
+    btn_enviar.innerText = "Próxima";
+
+    btn_enviar.removeEventListener("click", validar_reposta);
+
+    if (pergunta === 10) {
+        btn_enviar.innerText = "Finalizar";
+
+        btn_enviar.addEventListener("click", finalizar);
+    } else {
+        btn_enviar.addEventListener("click", proxima_pergunta);
     }
+
+
+    if (resposta === quiz.perguntas[pergunta-1].correct) {
+        document.querySelector(`label[for='${id_input_resposta}']`).setAttribute("id", "certo");
+        pontos += 1;
+    } else {
+        document.querySelector(`label[for='${id_input_resposta}']`).setAttribute("id", "errado");
+
+    }
+
+    pergunta += 1;
+};
+
+function finalizar() {
+    localStorage.setItem("pontos", pontos);
+    window.location.href = "../resultado/resultado.html"
+};
+
+function proxima_pergunta() {
+    montar_pergunta()
+    adicionar_eventos_inputs();
+};
+
+function adicionar_eventos_inputs() {
+    const input_resposta = document.querySelectorAll(".alternativas input");
+    input_resposta.forEach(input => {
+        input.addEventListener("click", guardar_resposta);
+
+        if (input.value === quiz.perguntas[pergunta-1].correct) {
+            id_resposta_correta = input.id;
+        }
+    });
 };
 
 async function iniciar() {
     await buscar_perguntas();
     montar_pergunta();
-
-    const input_resposta = document.querySelectorAll(".alternativas input");
-    input_resposta.forEach(input => {
-        input.addEventListener("click", guardar_resposta);
-    });
+    adicionar_eventos_inputs();
 };
 
 iniciar();

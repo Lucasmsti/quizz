@@ -102,6 +102,7 @@ main {
 
     & span {
         background: var(--incorreto);
+        color: #fff;
     }
 }
 

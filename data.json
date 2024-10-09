@@ -9,7 +9,7 @@
                 "Ozonio",
                 "Metano"
             ],
-            "resposta_correta": 2
+            "correct": 2
         },
         {
             "pergunta": "Qual é a principal fonte de energia renovável?",
@@ -20,7 +20,7 @@
                 "Gás natural",
                 "Petróleo"
             ],
-            "resposta_correta": 2
+            "correct": 2
         },
         {
             "pergunta": "O que é o aquecimento global?",
@@ -31,7 +31,7 @@
                 "Redução das áreas de floresta",
                 "Aumento da acidez dos oceanos"
             ],
-            "resposta_correta": 0
+            "correct": 0
         },
         {
             "pergunta": "Qual é o principal poluente das águas fluviais?",
@@ -42,7 +42,7 @@
                 "Ozônio",
                 "Dióxido de enxofre"
             ],
-            "resposta_correta": 2
+            "correct": 2
         },
         {
             "pergunta": "O que é uma fonte de energia não renovável?",
@@ -53,7 +53,7 @@
                 "Energia hidrelétrica",
                 "Energia de carvão"
             ],
-            "resposta_correta": 4
+            "correct": 4
         },
         {
             "pergunta": "Qual é o principal efeito do desmatamento nas florestas?",
@@ -64,7 +64,7 @@
                 "Aumento da qualidade do solo",
                 "Aumento da quantidade de água subterrânea"
             ],
-            "resposta_correta": 2
+            "correct": 2
         },
         {
             "pergunta": "O que é o conceito de sustentabilidade?",
@@ -75,7 +75,7 @@
                 "Redução da biodiversidade",
                 "Consumo excessivo de recursos naturais"
             ],
-            "resposta_correta": 1
+            "correct": 1
         },
         {
             "pergunta": "Qual é a principal causa da acidificação dos oceanos?",
@@ -86,7 +86,7 @@
                 "Desmatamento",
                 "Esgoto doméstico"
             ],
-            "resposta_correta": 2
+            "correct": 2
         },
         {
             "pergunta": "Qual é a principal função das árvores na atmosfera?",
@@ -97,7 +97,7 @@
                 "Absorver radiação solar",
                 "Aumentar a temperatura do ambiente"
             ],
-            "resposta_correta": 0
+            "correct": 0
         },
         {
             "pergunta": "O que é a camada de ozônio?",
@@ -108,7 +108,7 @@
                 "Uma camada de vapor d'água",
                 "Uma camada de dióxido de carbono"
             ],
-            "resposta_correta": 1
+            "correct": 1
         }
     ]
 }
