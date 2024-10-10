@@ -96,7 +96,6 @@ function validar_reposta() {
         btn_enviar.addEventListener("click", proxima_pergunta);
     }
 
-
     if (resposta === quiz.perguntas[pergunta-1].correct) {
         document.querySelector(`label[for='${id_input_resposta}']`).setAttribute("id", "certo");
         pontos += 1;
