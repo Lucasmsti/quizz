@@ -1,102 +1,105 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --btn-color: #9AD69C;
+  --btn-color: #9ad69c;
 }
 
 body {
-    height: 100svh;
-    background-image: linear-gradient(to bottom, rgba(255, 230, 3, 0.5), rgba(0, 232, 255, 0.8));
-    font-family: gagalin;
+  height: 100svh;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 230, 3, 0.5),
+    rgba(0, 232, 255, 0.8)
+  );
+  font-family: gagalin;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-    & .cipo, .cipo-2 {
-        height: 150px;
-    }
+  & .cipo,
+  .cipo-2 {
+    height: 150px;
+  }
 
-    & .cipo {
-        width: 230px;
-    }
+  & .cipo {
+    width: 230px;
+  }
 }
 
 main {
-    padding: 32px 24px;
+  padding: 32px 24px;
 }
 
 main .boas_vindas {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 main h1 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 main .elements {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }
 
 main .elements button {
-    height: 50px;
-    border-radius: 30px;
-    border: none;
-    font-family: gagalin;
-    font-size: 20px;
-    background: var(--btn-color);
-    transition: transform 0.2 ease, background-color 0.2 ease;
+  height: 50px;
+  border-radius: 30px;
+  border: none;
+  font-family: gagalin;
+  font-size: 20px;
+  background: var(--btn-color);
+  transition: transform 0.2 ease, background-color 0.2 ease;
 }
 
 main .elements button:active {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
-@media(min-width: 1100px) {
-    main {
-        display: flex;
-        justify-content: space-around;
-    }
+@media (min-width: 1100px) {
+  main {
+    display: flex;
+    justify-content: space-around;
+  }
 
-    main .boas_vindas {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 40%;
-    }
+  main .boas_vindas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+  }
 
-    main .elements {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 40%;
-    }
+  main .elements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+  }
 
-    main .elements img {
-        height: 400px;
-        width: 400px;
-        transition: transform 0.3s ease;
-    }
+  main .elements img {
+    height: 400px;
+    width: 400px;
+    transition: transform 0.3s ease;
+  }
 
-    main .elements img:hover {
-        transform: scale(1.1);
-    }
+  main .elements img:hover {
+    transform: scale(1.1);
+  }
 
-    main .elements button {
-        width: 400px;
-        transition: transform 0.3s ease;
-    }
+  main .elements button {
+    width: 400px;
+    transition: transform 0.3s ease;
+  }
 
-    main .elements button:hover {
-        transform: scale(1.1);
-    }
+  main .elements button:hover {
+    transform: scale(1.1);
+  }
 }
-
-
