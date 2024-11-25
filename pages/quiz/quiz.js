@@ -4,10 +4,10 @@ let pergunta = 0; // Começar em 0 para usar como índice
 let resposta = "";
 let id_input_resposta = "";
 let id_resposta_correta = "";
+document.getElementById("background-music").volume = 0.5;
 
 async function buscar_perguntas() {
     const url_dados = "../../data.json";
-
     const resposta = await fetch(url_dados);
     const dados = await resposta.json();
     quiz = dados;
@@ -37,7 +37,6 @@ function embaralhar_alternativas(pergunta) {
 
 function montar_pergunta() {
     const main = document.querySelector("main");
-
     main.innerHTML = `
         <section class="pergunta">
             <div>
@@ -95,11 +94,14 @@ function montar_pergunta() {
 }
 
 function guardar_resposta(evento) {
+   
+
     resposta = evento.target.value;
     id_input_resposta = evento.target.id;
 
     const btn_enviar = document.querySelector(".alternativas button");
     btn_enviar.addEventListener("click", validar_reposta);
+    
 }
 
 function validar_reposta() {
@@ -123,6 +125,10 @@ function validar_reposta() {
     } else {
         document.querySelector(`label[for='${id_input_resposta}']`).setAttribute("id", "errado");
     }
+    const input_resposta = document.querySelectorAll(".alternativas input");
+    input_resposta.forEach(input => {
+        input.disabled = true; // Desabilita o input
+    });
 
     // Avança para a próxima pergunta
     pergunta += 1;
@@ -134,6 +140,8 @@ function finalizar() {
 }
 
 function proxima_pergunta() {
+    const music = document.getElementById("background-music");
+    music.play(); 
     montar_pergunta();
     adicionar_eventos_inputs();
 }
@@ -146,6 +154,8 @@ function adicionar_eventos_inputs() {
 }
 
 async function iniciar() {
+    const music = document.getElementById("background-music");
+    music.play();
     await buscar_perguntas();
     montar_pergunta();
     adicionar_eventos_inputs();
