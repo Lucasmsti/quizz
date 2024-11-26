@@ -4,13 +4,15 @@ let pergunta = 0; // Começar em 0 para usar como índice
 let resposta = "";
 let id_input_resposta = "";
 let id_resposta_correta = "";
-document.getElementById("background-music").volume = 0.5;
+const music = document.getElementById("background-music");
+music.volume = 0.1;
 
 async function buscar_perguntas() {
     const url_dados = "../../data.json";
     const resposta = await fetch(url_dados);
     const dados = await resposta.json();
     quiz = dados;
+    
 
     embaralhar_perguntas(); // Embaralhar perguntas após carregá-las
 }
@@ -91,7 +93,9 @@ function montar_pergunta() {
             <button>Responder</button>
         </section>
     `;
+   
 }
+
 
 function guardar_resposta(evento) {
    
@@ -124,6 +128,11 @@ function validar_reposta() {
         pontos += 1;
     } else {
         document.querySelector(`label[for='${id_input_resposta}']`).setAttribute("id", "errado");
+
+        const correctAnswer = quiz.perguntas[pergunta].correct;
+        const correctAnswerIndex = quiz.perguntas[pergunta].alternativas.indexOf(correctAnswer);
+        const correctAnswerLabel = document.querySelector(`label[for='alternativa-${String.fromCharCode(97 + correctAnswerIndex)}']`); 
+        correctAnswerLabel.setAttribute("id", "correto");
     }
     const input_resposta = document.querySelectorAll(".alternativas input");
     input_resposta.forEach(input => {
@@ -136,12 +145,11 @@ function validar_reposta() {
 
 function finalizar() {
     localStorage.setItem("pontos", pontos);
+    music.pause();
     window.location.href = "../resultado/resultado.html"; // Redireciona para a página de resultado
 }
 
 function proxima_pergunta() {
-    const music = document.getElementById("background-music");
-    music.play(); 
     montar_pergunta();
     adicionar_eventos_inputs();
 }
@@ -154,11 +162,11 @@ function adicionar_eventos_inputs() {
 }
 
 async function iniciar() {
-    const music = document.getElementById("background-music");
     music.play();
     await buscar_perguntas();
     montar_pergunta();
     adicionar_eventos_inputs();
+    
 }
 
 // Inicia o quiz
