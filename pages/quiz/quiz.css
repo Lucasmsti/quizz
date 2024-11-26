@@ -96,6 +96,9 @@ main {
         color: #fff;
     }
 }
+   #correto {
+    outline: 3px solid #00ff00;
+}
 
 .alternativas form label#errado {
     outline: 3px solid var(--incorreto);
@@ -198,7 +201,5 @@ main {
         font-size: 22px;
     }
 
-    #correto {
-    outline: 3px solid #00ff00;
-}
+ 
 }
