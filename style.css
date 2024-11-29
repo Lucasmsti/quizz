@@ -64,6 +64,43 @@ main .elements button:active {
   transform: scale(1.05);
 }
 
+@media (min-width: 376px) and (max-width: 1099px) {
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    main .boas_vindas {
+      width: 70%;
+    }
+
+    main .elements {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    main .elements img:hover {
+      transform: scale(1.1);
+    }
+
+    main .elements img {
+      height: 350px;
+      width: 350px;
+      transition: transform 0.3s ease;
+    }
+
+    main .elements button {
+      width: 300px;
+      transition: transform 0.3s ease;
+    }
+  
+    main .elements button:hover {
+      transform: scale(1.1);
+    }
+}
+
 @media (min-width: 1100px) {
   main {
     display: flex;
