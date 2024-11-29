@@ -6,6 +6,10 @@ let id_input_resposta = "";
 let id_resposta_correta = "";
 const music = document.getElementById("background-music");
 music.volume = 0.1;
+const correctSound = document.getElementById("correct-sound");
+correctSound.volume = 0.3;
+const wrongSound = document.getElementById("wrong-sound");
+wrongSound.volume = 0.3;
 
 async function buscar_perguntas() {
     const url_dados = "../../data.json";
@@ -15,6 +19,16 @@ async function buscar_perguntas() {
     
 
     embaralhar_perguntas(); // Embaralhar perguntas após carregá-las
+}
+
+function playCorrectSound() {
+    correctSound.currentTime = 0; // Recomeça o som
+    correctSound.play();
+}
+
+function playWrongSound() {
+    wrongSound.currentTime = 0; // Recomeça o som
+    wrongSound.play();
 }
 
 function embaralhar_perguntas() {
@@ -126,8 +140,10 @@ function validar_reposta() {
     if (resposta === quiz.perguntas[pergunta].correct) {
         document.querySelector(`label[for='${id_input_resposta}']`).setAttribute("id", "certo");
         pontos += 1;
+        playCorrectSound();
     } else {
         document.querySelector(`label[for='${id_input_resposta}']`).setAttribute("id", "errado");
+        playWrongSound();
 
         const correctAnswer = quiz.perguntas[pergunta].correct;
         const correctAnswerIndex = quiz.perguntas[pergunta].alternativas.indexOf(correctAnswer);
