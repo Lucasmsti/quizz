@@ -146,6 +146,27 @@ main {
     cursor: pointer;
 }
 
+@media (min-width: 376px) and (max-width: 1099px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .pergunta {
+        width: 500px;
+    }
+
+    .alternativas {
+        width: 500px;
+    }
+
+    .alternativas form label {
+        margin-bottom: 5px;
+    }
+
+}
+
 @media (min-width: 1100px) {
     main {
         max-width: 1160px;
