@@ -154,15 +154,17 @@ main {
     }
     
     .pergunta {
-        width: 70vw;
+        max-width: 90vw;
+        word-wrap: break-word;
     }
 
     .alternativas {
-        width: 70vw;
+        max-width: 90vw;
     }
 
     .alternativas form label {
         margin-bottom: 5px;
+        word-wrap: break-word;
     }
 
 }
