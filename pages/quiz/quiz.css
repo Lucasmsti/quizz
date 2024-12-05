@@ -154,9 +154,7 @@ main {
     }
     
     .pergunta, .alternativas {
-        width: 90vw;
-        max-width: 600px;
-        min-width: 300px;
+        width: 70vw;
     }
 
     .alternativas form label {
