@@ -153,12 +153,10 @@ main {
         align-items: center;
     }
     
-    .pergunta {
+    .pergunta, .alternativas {
         max-width: 90vw;
-    }
-
-    .alternativas {
-        max-width: 90vw;
+        max-width: 600px;
+        min-width: 300px;
     }
 
     .alternativas form label {
