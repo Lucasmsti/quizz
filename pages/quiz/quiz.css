@@ -154,11 +154,11 @@ main {
     }
     
     .pergunta {
-        width: 50vw;
+        width: 70vw;
     }
 
     .alternativas {
-        width: 50vw;
+        width: 70vw;
     }
 
     .alternativas form label {
