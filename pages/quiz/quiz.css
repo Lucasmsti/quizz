@@ -154,7 +154,7 @@ main {
     }
     
     .pergunta, .alternativas {
-        max-width: 90vw;
+        width: 90vw;
         max-width: 600px;
         min-width: 300px;
     }
