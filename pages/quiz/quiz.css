@@ -155,7 +155,6 @@ main {
     
     .pergunta {
         max-width: 90vw;
-        word-wrap: break-word;
     }
 
     .alternativas {
@@ -164,7 +163,6 @@ main {
 
     .alternativas form label {
         margin-bottom: 5px;
-        word-wrap: break-word;
     }
 
 }
